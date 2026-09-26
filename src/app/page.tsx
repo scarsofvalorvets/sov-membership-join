@@ -1,5 +1,21 @@
+import Link from "next/link";
 import JoinForm from "@/components/JoinForm";
 import { MEMBERSHIP_TIERS } from "@/lib/tiers";
+
+const REGISTRY_FEATURES = [
+  {
+    title: "Your service record",
+    text: "Branch or agency, units, deployments, and awards, in your own words. You decide who sees it.",
+  },
+  {
+    title: "Find your people",
+    text: "Search the directory and unit rosters for the men and women you served with.",
+  },
+  {
+    title: "Reconnect privately",
+    text: "Message members inside the registry. Your email and phone are never shared.",
+  },
+];
 
 export default function HomePage() {
   const freeTiers = MEMBERSHIP_TIERS.filter((t) => t.isFree);
@@ -18,7 +34,31 @@ export default function HomePage() {
           Stand with a community that honors service, strengthens legacy, and
           supports those who have given so much. Choose a complimentary tier if
           you are a Veteran or First Responder, or an annual membership that
-          fuels the mission.
+          fuels the mission. Every membership includes access to the SoV member
+          registry.
+        </p>
+      </section>
+
+      <section className="mb-10 grid gap-4 sm:grid-cols-3" aria-label="Member registry">
+        {REGISTRY_FEATURES.map((f) => (
+          <div
+            key={f.title}
+            className="rounded-2xl border border-blue-900/60 bg-gradient-to-b from-blue-950/40 to-stone-950/40 p-5"
+          >
+            <h2 className="text-sm font-semibold text-amber-300">{f.title}</h2>
+            <p className="mt-2 text-sm leading-relaxed text-stone-400">{f.text}</p>
+          </div>
+        ))}
+        <p className="text-sm text-stone-500 sm:col-span-3">
+          Already a member?{" "}
+          <Link href="/signin" className="font-medium text-amber-400 hover:text-amber-300">
+            Sign in
+          </Link>{" "}
+          or{" "}
+          <Link href="/directory" className="font-medium text-amber-400 hover:text-amber-300">
+            browse the directory
+          </Link>
+          .
         </p>
       </section>
 
