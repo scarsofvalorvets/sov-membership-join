@@ -87,7 +87,7 @@ const MEMBERS: SeedMember[] = [
       specialty: "11B Infantryman",
       start: 2001,
       end: 2009,
-      bio: "[Example data] Enlisted out of high school, two deployments with the 1st of the 599th. After the Army I went into logistics and coach youth wrestling. Looking for the guys from 2nd Platoon.",
+      bio: "[Example data] Enlisted out of high school, two deployments with the 1st of the 599th. After the Army I went into logistics and run a hunting lease. Looking for the guys from 2nd Platoon.",
       hometown: "Example Springs",
       state: "TX",
       visibility: "members",
